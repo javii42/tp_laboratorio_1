@@ -127,7 +127,18 @@ int verificar(int num){
 
 int pedirNumeroEntero(char texto[]){
     int operando = 0;
-    printf("%s \n", texto);
-    scanf("%d",&operando);
+    int isNumeric;
+    int flag;
+    do{
+        if(flag == 1){
+            printf("Dato invalido, %s \n", texto);
+        }else{
+            printf("%s \n", texto);
+            flag = 1;
+        }
+        fflush( stdin );
+        isNumeric = scanf("%d",&operando);
+        system("cls");
+    }while(isNumeric!=1);
     return operando;
 }
