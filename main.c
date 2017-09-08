@@ -11,20 +11,25 @@ int main()
 {
     char seguir='s';
     int opcion=0;
-    int numA = 0; // Primer operando
-    int numB = 0; // Segundo operando
+    int flagA, flagB;
+    float numA = 0; // Primer operando
+    float numB = 0; // Segundo operando
     while(seguir=='s')
     {
         opcion = mostrarMenu(numA, numB);
-
+        if(opcion!=9 && opcion!=1 && opcion!= 2 && flagA!=1 && flagB!=1){
+            opcion = 10;
+        }
         switch(opcion)
         {
             case 1:
                 system("cls");
+                flagA = 1;
                 numA = pedirNumeroEntero("Ingrese el primer operando: ");
                 break;
             case 2:
                 system("cls");
+                flagB = 1;
                 numB = pedirNumeroEntero("Ingrese el segundo operando: ");
                 break;
             case 3:
@@ -64,6 +69,10 @@ int main()
             case 9:
                 seguir = 'n';
                 break;
+            default:
+                system("cls");
+                printf("No se ingreso ningun dato.\n");
+                system("pause");
         }
         system("cls");
     }

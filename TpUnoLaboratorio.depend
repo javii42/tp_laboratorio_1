@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1503880328 source:c:\users\javier\documents\laboratorio - 1 utn\tpunolaboratorio\funciones.c
+1504830753 source:c:\users\javier\documents\laboratorio - 1 utn\tpunolaboratorio\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	"funciones.h"
 
-1503880214 source:c:\users\javier\documents\laboratorio - 1 utn\tpunolaboratorio\main.c
+1504831206 source:c:\users\javier\documents\laboratorio - 1 utn\tpunolaboratorio\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	"funciones.h"
 
-1504620162 c:\users\javier\documents\laboratorio - 1 utn\tpunolaboratorio\funciones.h
+1504829658 c:\users\javier\documents\laboratorio - 1 utn\tpunolaboratorio\funciones.h
 
