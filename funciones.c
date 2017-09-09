@@ -28,24 +28,15 @@ void sumar(float numA, float numB)
 {
     float resultado = 0;
     resultado = numA + numB;
-    system("color 1C");
-    printf(" -----------------------------------------------\n");
-    printf("|\t\t\t\t\t\t|\n");
-    printf("|   %.2f + %.2f = %.2f\t\t\t\t|\n", numA, numB, resultado);
-    printf("|\t\t\t\t\t\t|\n");
-    printf(" -----------------------------------------------\n");
+    mostrarResultado('+',numA,numB,resultado);
 }
 
 void restar(float numA, float numB)
 {
     float resultado = 0;
     resultado = numA - numB;
+    mostrarResultado('-',numA,numB,resultado);
     system("color 1C");
-    printf(" -----------------------------------------------\n");
-    printf("|\t\t\t\t\t\t|\n");
-    printf("|   %.2f - %.2f = %.2f\t\t\t\t|\n", numA, numB, resultado);
-    printf("|\t\t\t\t\t\t|\n");
-    printf(" -----------------------------------------------\n");
 }
 
 void dividir(float numA, float numB)
@@ -57,20 +48,16 @@ void dividir(float numA, float numB)
     if(verificado == 0)
     {
         system("color 1C");
-        printf(" ------------------------------------------------\n");
-        printf("|\t\t\t\t\t\t|\n");
-        printf("| No es posible calcular dividir por cero.\t|\n");
-        printf("|\t\t\t\t\t\t|\n");
-        printf(" ------------------------------------------------\n");
+        printf(" --------------------------------------------------------------------------\n");
+        printf("|\n");
+        printf("| \tNo es posible calcular dividir por cero.\n");
+        printf("|\n");
+        printf(" --------------------------------------------------------------------------\n");
     }
     else
     {
         resultado =  numA / numB;
-        printf(" -----------------------------------------------\n");
-        printf("|\t\t\t\t\t\t|\n");
-        printf("|  %.2f / %.2f = %.2f\t\t\t\t|\n", numA, numB, resultado);
-        printf("|\t\t\t\t\t\t|\n");
-        printf(" -----------------------------------------------\n");
+        mostrarResultado('/',numA,numB,resultado);
     }
 }
 
@@ -78,12 +65,7 @@ void multiplicar(float numA, float numB)
 {
     float resultado = 0;
     resultado = numA * numB;
-    system("color 1C");
-    printf(" -----------------------------------------------\n");
-    printf("|\t\t\t\t\t\t|\n");
-    printf("|   %.2f x %.2f = %.2f\t\t\t\t|\n", numA, numB, resultado);
-    printf("|\t\t\t\t\t\t|\n");
-    printf(" -----------------------------------------------\n");
+    mostrarResultado('x',numA,numB,resultado);
 }
 
 void factorial(float num)
@@ -96,22 +78,22 @@ void factorial(float num)
     if(verificado == 0)
     {
         system("color 1C");
-        printf(" ---------------\n");
-        printf("|\t\t|\n");
-        printf("|    0! = 1\t|\n");
-        printf("|\t\t|\n");
-        printf(" ---------------\n");
+        printf(" --------------------------------------------------------------------------\n");
+        printf("|\n");
+        printf("| \t0! = 1\n");
+        printf("|\n");
+        printf(" --------------------------------------------------------------------------\n");
     }
     else
     {
         if(verificado == 2)
         {
             system("color 1C");
-            printf(" ---------------------------------------------------------------\n");
-            printf("|\t\t\t\t\t\t\t\t|\n");
-            printf("| No es posible calcular el factorial de un número negativo.\t|\n");
-            printf("|\t\t\t\t\t\t\t\t|\n");
-            printf(" ---------------------------------------------------------------\n");
+            printf(" --------------------------------------------------------------------------\n");
+            printf("|\n");
+            printf("| \tNo es posible calcular el factorial de un número negativo.\n");
+            printf("|\n");
+            printf(" --------------------------------------------------------------------------\n");
         }
         else
         {
@@ -119,12 +101,7 @@ void factorial(float num)
             {
                 factorial = factorial * i;
             }
-            system("color 1C");
-            printf(" -----------------------------------------------\n");
-            printf("|\t\t\t\t\t\t|\n");
-            printf("|    %d! = %lli\t\t\t\t|\n", (int)num, factorial);
-            printf("|\t\t\t\t\t\t|\n");
-            printf(" -----------------------------------------------\n");
+            mostrarResultado('!',num,0,(float)factorial);
         }
     }
 }
@@ -168,4 +145,20 @@ float pedirNumeroEntero(char texto[])
     }
     while(isNumeric!=1);
     return operando;
+}
+
+void mostrarResultado(char operacion, float numA, float numB, float resultado){
+    system("color 1C");
+    printf(" --------------------------------------------------------------------------\n");
+    printf("|\n");
+    if(operacion != '!')
+    {
+        printf("| \t%.2f %c %.2f = %.2f \n", numA,operacion, numB, resultado);
+    }else
+    {
+        printf("| \t%d! = %d \n", (int)numA, (int)resultado);
+    }
+    printf("|\n");
+    printf(" --------------------------------------------------------------------------\n");
+
 }

@@ -11,13 +11,13 @@ int main()
 {
     char seguir='s';
     int opcion=0;
-    int flagA, flagB;
+    int flagA=0, flagB=0;
     float numA = 0; // Primer operando
     float numB = 0; // Segundo operando
     while(seguir=='s')
     {
         opcion = mostrarMenu(numA, numB);
-        if(opcion!=9 && opcion!=1 && opcion!= 2 && flagA!=1 && flagB!=1){
+        if(!(opcion==9 || opcion==1 || opcion== 2) && (flagA!=1 || flagB!=1)){
             opcion = 10;
         }
         switch(opcion)
